@@ -45,10 +45,10 @@ class Circle(Shape):
         self.rad = rad
 
     def get_perimeter(self):
-        print(f'Периметр круга = {2 * pi * self.rad}')
+        return(f'Периметр круга = {2 * pi * self.rad}')
 
     def get_square(self):
-        print(f'Площадь круга = {pi * self.rad ** 2}')
+        return(f'Площадь круга = {pi * self.rad ** 2}')
 
 
 class Rectangle(Shape):
@@ -62,10 +62,10 @@ class Rectangle(Shape):
         self.side_two = side_two
 
     def get_perimeter(self):
-        print(f'Периметр прямоугольника = {2 * self.side_one + 2 * self.side_two}')
+        return(f'Периметр прямоугольника = {2 * self.side_one + 2 * self.side_two}')
 
     def get_square(self):
-        print(f'Площадь прямоугольника = {self.side_one * self.side_two}')
+        return(f'Площадь прямоугольника = {self.side_one * self.side_two}')
 
 
 class Square(Rectangle):
@@ -76,7 +76,7 @@ class Square(Rectangle):
         super().__init__(side_one, side_one)
 
     def get_perimeter(self):
-        print(f'Периметр квадрата = {self.side_one * 4}')
+        return(f'Периметр квадрата = {self.side_one * 4}')
 
     def get_square(self):
-        print(f'Площадь квадрата = {self.side_one ** 2}')
+        return(f'Площадь квадрата = {self.side_one ** 2}')
