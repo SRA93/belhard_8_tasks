@@ -21,3 +21,62 @@
 Периметр = 4 * a
 Площадь = a ** 2
 """
+
+from abc import ABC, abstractmethod
+from math import pi
+
+
+class Shape(ABC):
+
+    @abstractmethod
+    def get_perimeter(self):
+        pass
+
+    @abstractmethod
+    def get_square(self):
+        pass
+
+
+class Circle(Shape):
+
+    rad: float
+
+    def __init__(self, rad: float):
+        self.rad = rad
+
+    def get_perimeter(self):
+        print(f'Периметр круга = {2 * pi * self.rad}')
+
+    def get_square(self):
+        print(f'Площадь круга = {pi * self.rad ** 2}')
+
+
+class Rectangle(Shape):
+
+    side_one: float
+    side_two: float
+
+    def __init__(self, side_one: float, side_two: float):
+
+        self.side_one = side_one
+        self.side_two = side_two
+
+    def get_perimeter(self):
+        print(f'Периметр прямоугольника = {2 * self.side_one + 2 * self.side_two}')
+
+    def get_square(self):
+        print(f'Площадь прямоугольника = {self.side_one * self.side_two}')
+
+
+class Square(Rectangle):
+
+    side_one: float
+
+    def __init__(self, side_one: float):
+        super().__init__(side_one, side_one)
+
+    def get_perimeter(self):
+        print(f'Периметр квадрата = {self.side_one * 4}')
+
+    def get_square(self):
+        print(f'Площадь квадрата = {self.side_one ** 2}')
